@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.site {
+    display: grid;
+    grid-template: repeat(6,auto) / repeat(3,1fr);
+}
+
+.task {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+.task-header {
+    margin-bottom: 10px;
+}
+
+.task-description {
+    margin-bottom: 10px;
+}
+
+.task-decision {
+    margin-top: 10px;
+}
+
+.task2 {
+    grid-area: 1/1;
+}
+
+.task4 {
+    grid-area: 1/2;
+}
+
+.task5 {
+    grid-area: 1/3;
+}
+
+.task6 {
+    grid-area: 2/1;
+}
+
+.task8 {
+    grid-area: 2/2;
+}
+
+.task7 {
+    grid-area: 2/3;
+}
+
+.task10 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
