@@ -17,7 +17,7 @@ for ($i = 0; $i < count($a); $i++) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // ЗАДАНИЕ 2 - Дано трехзначное число. Поменяйте среднюю цифру на ноль.
 
-$task2num =  isset($_GET['task2']) ? $_GET['task2'] : 123;
+$task2num =  $_GET['task2'] ?? 123;
 $digit1 = $task2num / 100;
 $digit1 = (int) $digit1;
 $digit3 = $task2num % 10;
@@ -46,7 +46,7 @@ for ($i = 0; $i < count($a); $i++) {
 // противном случае выведите 'нет'.
 
 
-$task4str = (isset($_GET['task4'])) ? $_GET['task4']: 'abcde';
+$task4str = $_GET['task4'] ?? 'abcde';
 if ($task4str[0] == 'a') {
     $task4result = "да";
 } else {
@@ -59,7 +59,7 @@ if ($task4str[0] == 'a') {
 // равняется сумме вторых трех цифр. Если это так - выведите 'да', в противном
 // случае выведите 'нет'.
 
-$task5str = (isset($_GET['task5'])) ? $_GET['task5']: 123321;
+$task5str = $_GET['task5'] ?? 123321;
 $task5str = (string) $task5str;
 if ($task5str[0]+$task5str[1]+$task5str[2] == $task5str[3]+$task5str[4]+$task5str[5]) {
     $task5result = "да";
@@ -72,17 +72,10 @@ if ($task5str[0]+$task5str[1]+$task5str[2] == $task5str[3]+$task5str[4]+$task5st
 // часов по введенным пользователем градусах. Введенное число может быть от
 // 0 до 360.
 
-
-if (isset($_GET["task6"])) {
-    $task6degrees = $_GET["task6"];
-    $task6hours = $task6degrees / 30;
-    $task6hours = (int) $task6hours;
-    $task6minutes = ($task6degrees % 30) * 2;
-} else {
-    $task6degrees = 0;
-    $task6hours = 0;
-    $task6minutes = 0;
-}
+$task6degrees = $_GET["task6"] ?? 80;
+$task6hours = $task6degrees / 30;
+$task6hours = (int) $task6hours;
+$task6minutes = ($task6degrees % 30) * 2;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -100,7 +93,7 @@ for ($i = 20; $i <= 45; $i++) {
 // ЗАДАНИЕ 8 - Дано пятизначное число. Цифры на четных позициях «занулить».
 // Например, из 12345 получается число 10305.
 
-$task8num = isset($_GET['task8']) ? $_GET['task8'] : 12345;
+$task8num = $_GET['task8'] ?? 12345;
 $digit1 = $task8num / 10000;
 $digit1 = (int) $digit1;
 $digit3 = $task8num / 100;
@@ -125,7 +118,7 @@ for (;$task9resultNum >= 50;) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // ЗАДАНИЕ 10 - Квадрат из символов "*" размерностью n*n
 
-$task10num = isset($_GET['task10']) ? $_GET['task10'] : 5;
+$task10num = $_GET['task10'] ?? 5;
 $task10result = '';
 for ($i = 0; $i < $task10num; $i++) {
     for ($j = 0; $j < $task10num; $j++) {
@@ -221,7 +214,7 @@ for ($i = 0; $i < $task10num; $i++) {
                 <input type="number" name='task6' value="<?= $task6degrees?>" min="0" max="360"/>
                 <button>Получить результат</button>
             </form>
-            <p class="task-decision"><?= "Прошло {$task6hours} часов {$task6minutes} минут(ы)." ?></p>
+            <p class="task-decision"><?= "Прошло {$task6hours} час(а/ов) {$task6minutes} минут(ы)." ?></p>
         </div>
         <div class="task task7">
             <h3 class="task-header">ЗАДАНИЕ 7</h3>
